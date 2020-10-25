@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+        <h1>{# <?=$header ?> #}</h1>
+        <button class="btn dropdown-toggle" data-toggle="dropdown">{# Add #}</button>
+        <form class="dropdown-menu ma-1" action="<?=$prefix ?>/add" method="post">
+            <label for="name">{# Company name #}</label>
+            <input id="name" name="name" type="text" class="form-control">
+            <button class="btn btn-primary">{# Add #}</button>
+        </form>
+    </div>
+    <div class="card-body">
+
+        <?php foreach ($items as $item): ?>
+            <div class="row border">
+                <div class="col">
+                    <a href="/company/<?=$item['id'] ?>"><?=$item['name'] ?></a>
+                </div>
+                <div class="col">
+                    <?php if($item['active']){ ?> {# Active #} <?php }else{ ?> {# Blocked #} <?php }?>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning">{# Block #}</button>
+                    <button class="btn btn-danger">{# Delete #}</button>
+                    <a class="btn btn-info" href="/company/<?=$item['id']?>/edit">{# Edit #}</a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>

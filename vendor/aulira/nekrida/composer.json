@@ -1,0 +1,18 @@
+{
+  "name": "aulira/nekrida",
+  "version": "0.1.1",
+  "authors": [
+    {
+      "name": "Aulira",
+      "role": "developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Nekrida\\": ""
+    },
+    "psr-0": {
+      "Nekrida\\": ""
+    }
+  }
+}
